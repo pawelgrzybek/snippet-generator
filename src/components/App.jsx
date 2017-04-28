@@ -1,37 +1,81 @@
 import React, { Component } from 'react';
+import Input from './Input';
+import Output from './Output';
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
+      description: '',
+      tabTrigger: '',
       snippet: '',
+      mode: 'vscode'
     };
-    this.changeHandler = this.changeHandler.bind(this);
+
+    this.updateDescription = this.updateDescription.bind(this);
+    this.updateTabTrigger = this.updateTabTrigger.bind(this);
+    this.updateSnippet = this.updateSnippet.bind(this);
+    this.updateMode = this.updateMode.bind(this);
   }
 
-  changeHandler(e) {
-    const value = e.target.value.split('\n');
-    const valueLength = value.length;
-
-    // add double quotes around each line apart from the last one
-    const newSnippet = value.map((line, index) => {
-      return index === valueLength - 1 ? `"${line}"` : `"${line}",`;
+  updateDescription(e) {
+    this.setState({
+      description: e.target.value
     });
+  }
+
+  updateTabTrigger(e) {
+    this.setState({
+      tabTrigger: e.target.value
+    });
+  }
+
+  updateSnippet(e) {
+    this.setState({
+      snippet: e.target.value
+    });
+  }
+
+  updateMode(mode) {
+    if (mode === 'vscode') {
+      document.documentElement.style.setProperty('--color', '#373277');
+    }
+    else if (mode === 'sublimetext') {
+      document.documentElement.style.setProperty('--color', '#FF9800');
+    }
+    else if (mode === 'atom') {
+      document.documentElement.style.setProperty('--color', '#40a977');
+    }
 
     this.setState({
-      snippet: newSnippet.join('\n')
+      mode
     });
   }
 
   render() {
     return (
       <div className="app">
-        <textarea className="app__textarea" rows="10" cols="50" onChange={this.changeHandler}></textarea>
-        <pre className="app__pre">
-          {this.state.snippet}
-        </pre>
+        <Input
+          description={this.state.description}
+          tabtrigger={this.state.tabTrigger}
+          snippet={this.state.snippet}
+          updatedescription={this.updateDescription}
+          updatetabtrigger={this.updateTabTrigger}
+          updatesnippet={this.updateSnippet}
+        />
+        <Output
+          description={this.state.description}
+          tabtrigger={this.state.tabTrigger}
+          snippet={this.state.snippet}
+          mode={this.state.mode}
+          updatemode={this.updateMode}
+        />
       </div>
+      /*<textarea className="app__textarea" rows="10" cols="50" onChange={this.changeHandler}></textarea>
+      <pre className="app__pre">
+        {this.state.snippet}
+      </pre>*/
     );
   }
 };
