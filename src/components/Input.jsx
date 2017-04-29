@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 
 class Input extends Component {
+  renderInfo() {
+
+    const docs = {
+      vscode: 'https://code.visualstudio.com/docs/editor/userdefinedsnippets',
+      sublimetext: 'http://docs.sublimetext.info/en/latest/extensibility/snippets.html',
+      atom: 'http://flight-manual.atom.io/using-atom/sections/snippets/',
+    };
+
+    return <p className="info">To declare a placeholder: <span className="info__select">{'${1:example}'}</span> | <a className="info__link" href={docs[this.props.mode]}>More info</a></p>;
+  }
+
   render() {
     return (
       <div className="app__half">
@@ -27,6 +38,9 @@ class Input extends Component {
             wrap="off"
           >
           </textarea>
+
+          {this.renderInfo()}
+
         </div>
 
       </div>

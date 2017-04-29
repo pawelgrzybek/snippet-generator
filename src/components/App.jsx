@@ -60,6 +60,7 @@ class App extends React.Component {
           description={this.state.description}
           tabtrigger={this.state.tabTrigger}
           snippet={this.state.snippet}
+          mode={this.state.mode}
           updatedescription={this.updateDescription}
           updatetabtrigger={this.updateTabTrigger}
           updatesnippet={this.updateSnippet}
@@ -72,10 +73,6 @@ class App extends React.Component {
           updatemode={this.updateMode}
         />
       </div>
-      /*<textarea className="app__textarea" rows="10" cols="50" onChange={this.changeHandler}></textarea>
-      <pre className="app__pre">
-        {this.state.snippet}
-      </pre>*/
     );
   }
 };

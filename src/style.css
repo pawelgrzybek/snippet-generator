@@ -8,9 +8,9 @@
 }
 
 html {
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
   box-sizing: border-box;
 }
@@ -28,10 +28,10 @@ html {
 }
 
 body {
+  color: #333;
   font-family: 'Source Code Pro', Consolas, monaco, monospace;
   font-size: 1rem;
   line-height: 1.6rem;
-  color: #333;
 }
 
 @keyframes pop {
@@ -52,23 +52,24 @@ body {
 
 .app {
   display: flex;
-  padding: .4rem;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color);
+  padding: .4rem;
   transition: 140ms background-color;
+  background-color: var(--color);
 }
 
 .app__half {
   display: flex;
-  margin-right: .4rem;
+  position: relative;
   flex-direction: column;
+  flex-shrink: 0;
   width: 50%;
   height: 100%;
-  background-color: #fff;
+  margin-right: .4rem;
   padding: .4rem;
   border-radius: var(--radius);
-  flex-shrink: 0;
+  background-color: #fff;
 }
 
 .app__half:last-of-type {
@@ -102,15 +103,15 @@ body {
 
 .btn {
   width: 100%;
+  transition: 120ms background-color;
+  border: 0;
+  border-radius: var(--radius);
+  outline: 0;
   background: var(--gray);
   color: #fff;
   font: inherit;
-  border: 0;
   box-shadow: none;
-  outline: 0;
   cursor: pointer;
-  transition: 120ms background-color;
-  border-radius: var(--radius);
 }
 
 .btn--active {
@@ -136,16 +137,16 @@ body {
 
 .input {
   width: 100%;
-  background: #fff;
-  border: 1px solid var(--gray);
-  outline: 0;
-  resize: none;
-  font: inherit;
-  padding: 1.2rem;
-  color: inherit;
   margin: 0;
+  padding: 1.2rem;
   transition: 120ms border;
+  border: 1px solid var(--gray);
   border-radius: var(--radius);
+  outline: 0;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  resize: none;
 }
 
 .input:hover {
@@ -162,20 +163,39 @@ body {
 
 .pre {
   width: 100%;
-  background: #fff;
-  border: 1px solid var(--gray);
-  outline: 0;
-  resize: none;
-  font: inherit;
-  padding: 1.2rem;
-  color: inherit;
   margin: 0;
+  padding: 1.2rem;
   transition: 120ms border;
-  -webkit-user-select: all;
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  outline: 0;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  overflow: auto;
+  resize: none;
   -moz-user-select: all;
   -ms-user-select: all;
+  -webkit-user-select: all;
   user-select: all;
-  overflow: auto;
-  border-radius: var(--radius);
   /*white-space: pre-wrap;*/
+}
+
+.info {
+  position: absolute;
+  right: .8rem;
+  bottom: .6rem;
+  font-size: 0.75rem;
+}
+
+.info__select {
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -webkit-user-select: all;
+  user-select: all;
+}
+
+.info__link {
+  color: var(--color);
+  text-decoration: none;
 }

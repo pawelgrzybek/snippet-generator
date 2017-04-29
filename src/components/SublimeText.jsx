@@ -4,9 +4,9 @@ class SublimeText extends Component {
   render() {
     return (
       <pre className="pre">
-        sublime text logic  here...
+        Very soon…
 
-        {this.props.snippet}
+        {/*{this.props.snippet}*/}
       </pre>
     );
   }

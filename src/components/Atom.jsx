@@ -4,9 +4,9 @@ class Atom extends Component {
   render() {
     return (
       <pre className="pre">
-        atom logic here
+        Very soon…
 
-        {this.props.snippet}
+        {/*{this.props.snippet}*/}
       </pre>
     );
   }
