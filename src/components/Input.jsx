@@ -24,6 +24,7 @@ class Input extends Component {
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
+            wrap="off"
           >
           </textarea>
         </div>

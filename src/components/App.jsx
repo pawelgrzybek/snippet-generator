@@ -39,7 +39,7 @@ class App extends React.Component {
 
   updateMode(mode) {
     if (mode === 'vscode') {
-      document.documentElement.style.setProperty('--color', '#373277');
+      document.documentElement.style.setProperty('--color', '#1278BD');
     }
     else if (mode === 'sublimetext') {
       document.documentElement.style.setProperty('--color', '#FF9800');

@@ -11,13 +11,13 @@ class Output extends Component {
 
   renderSnippet() {
     if (this.props.mode === 'vscode') {
-      return <VSCode snippet={this.props.snippet} />
+      return <VSCode snippet={this.props.snippet} description={this.props.description} tabtrigger={this.props.tabtrigger} />
     }
     else if (this.props.mode === 'sublimetext') {
-      return <SublimeText snippet={this.props.snippet} />
+      return <SublimeText snippet={this.props.snippet} description={this.props.description} tabtrigger={this.props.tabtrigger} />
     }
     else if (this.props.mode === 'atom') {
-      return <Atom snippet={this.props.snippet} />
+      return <Atom snippet={this.props.snippet} description={this.props.description} tabtrigger={this.props.tabtrigger} />
     }
   }
 

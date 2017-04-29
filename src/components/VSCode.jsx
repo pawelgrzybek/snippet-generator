@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { html } from 'common-tags';
 
 class VSCode extends Component {
   constructor() {
@@ -7,19 +8,26 @@ class VSCode extends Component {
   }
 
   renderVSCodeVersion(snippet) {
-    if (!snippet) {
-      return;
-    }
-    const separatedSnippet = snippet.split('\n');
-    const separatedSnippetLength = separatedSnippet.length;
 
+    // escape " with \"
+    // split lines by line-break
+    const separatedSnippet = snippet.replace(/"/g, '\\"').split('\n');
+    const separatedSnippetLength = separatedSnippet.length;
 
     // add double quotes around each line apart from the last one
     const newSnippet = separatedSnippet.map((line, index) => {
       return index === separatedSnippetLength - 1 ? `"${line}"` : `"${line}",`;
     });
 
-    return newSnippet.join('\n');
+    return html`
+      "${this.props.description}": {
+        "prefix": "${this.props.tabtrigger}",
+        "body": [
+          ${newSnippet.join('\n')}
+        ],
+        "description": "${this.props.description}"
+      }
+    `;
   }
 
   render() {

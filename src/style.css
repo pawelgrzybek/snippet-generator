@@ -2,8 +2,17 @@
 
 /* globals */
 :root {
-  --color: #373277;
+  --color: #1278BD;
   --gray: #bbb;
+  --radius: 3px;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
 }
 
 ::selection {
@@ -25,6 +34,20 @@ body {
   color: #333;
 }
 
+@keyframes pop {
+  0% {
+    transform: none;
+  }
+
+  50% {
+    transform: translate3d(3px, 0, 0);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
 /* app */
 
 .app {
@@ -40,10 +63,12 @@ body {
   display: flex;
   margin-right: .4rem;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background-color: #fff;
   padding: .4rem;
+  border-radius: var(--radius);
+  flex-shrink: 0;
 }
 
 .app__half:last-of-type {
@@ -54,7 +79,7 @@ body {
   display: flex;
   flex-shrink: 0;
   width: 100%;
-  height: 4.8rem;
+  height: 4rem;
   margin-bottom: .4rem;
 }
 
@@ -85,14 +110,18 @@ body {
   outline: 0;
   cursor: pointer;
   transition: 120ms background-color;
+  border-radius: var(--radius);
 }
 
 .btn--active {
   background: var(--color);
+  animation-name: pop;
+  animation-duration: 60ms;
+  animation-fill-mode: both;
 }
 
 .btn--vscode:hover {
-  background: #373277;
+  background: #1278BD;
 }
 
 .btn--sublimetext:hover {
@@ -108,7 +137,7 @@ body {
 .input {
   width: 100%;
   background: #fff;
-  border: 2px solid var(--gray);
+  border: 1px solid var(--gray);
   outline: 0;
   resize: none;
   font: inherit;
@@ -116,30 +145,17 @@ body {
   color: inherit;
   margin: 0;
   transition: 120ms border;
+  border-radius: var(--radius);
 }
 
 .input:hover {
-  border: 2px solid var(--color);
-}
-
-@keyframes inputBounce {
-  0% {
-    transform: none;
-  }
-
-  50% {
-    transform: scaleX(1.01);
-  }
-
-  100% {
-    transform: none;
-  }
+  border: 1px solid var(--color);
 }
 
 
 .input:focus {
-  border: 2px solid var(--color);
-  animation-name: inputBounce;
+  border: 1px solid var(--color);
+  animation-name: pop;
   animation-duration: 60ms;
   animation-fill-mode: both;
 }
@@ -147,7 +163,7 @@ body {
 .pre {
   width: 100%;
   background: #fff;
-  border: 2px solid var(--gray);
+  border: 1px solid var(--gray);
   outline: 0;
   resize: none;
   font: inherit;
@@ -160,4 +176,6 @@ body {
   -ms-user-select: all;
   user-select: all;
   overflow: auto;
+  border-radius: var(--radius);
+  /*white-space: pre-wrap;*/
 }
