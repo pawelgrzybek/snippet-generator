@@ -9,7 +9,7 @@ class Input extends Component {
       atom: 'http://flight-manual.atom.io/using-atom/sections/snippets/',
     };
 
-    return <p className="info">To declare a placeholder: <span className="info__select">{'${1:example}'}</span> | <a className="info__link" href={docs[this.props.mode]}>More info</a></p>;
+    return <p className="info">To declare a placeholder: <span className="info__select">{'${1:example}'}</span> | <a className="info__link" href={docs[this.props.mode]} target="_blank">More info</a></p>;
   }
 
   render() {
