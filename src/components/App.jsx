@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import Input from './Input';
 import Output from './Output';
 
@@ -56,22 +57,27 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Input
-          description={this.state.description}
-          tabtrigger={this.state.tabTrigger}
-          snippet={this.state.snippet}
-          mode={this.state.mode}
-          updatedescription={this.updateDescription}
-          updatetabtrigger={this.updateTabTrigger}
-          updatesnippet={this.updateSnippet}
-        />
-        <Output
-          description={this.state.description}
-          tabtrigger={this.state.tabTrigger}
-          snippet={this.state.snippet}
-          mode={this.state.mode}
-          updatemode={this.updateMode}
-        />
+
+        <Header/>
+
+        <div className="app__bottom">
+          <Input
+            description={this.state.description}
+            tabtrigger={this.state.tabTrigger}
+            snippet={this.state.snippet}
+            mode={this.state.mode}
+            updatedescription={this.updateDescription}
+            updatetabtrigger={this.updateTabTrigger}
+            updatesnippet={this.updateSnippet}
+          />
+          <Output
+            description={this.state.description}
+            tabtrigger={this.state.tabTrigger}
+            snippet={this.state.snippet}
+            mode={this.state.mode}
+            updatemode={this.updateMode}
+          />
+        </div>
       </div>
     );
   }

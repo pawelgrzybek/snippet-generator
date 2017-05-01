@@ -50,14 +50,41 @@ body {
 }
 
 /* app */
-
 .app {
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  padding: .4rem;
+  flex-direction: column;
   transition: var(--ms) background-color;
   background-color: var(--color);
+  height: 100vh;
+}
+
+.app__header {
+  text-align: center;
+  color: #fff;
+  padding: .8rem;
+}
+
+.app__title {
+  font-size: 1.5rem;
+  line-height: 3.2rem;
+  margin: 0;
+}
+
+.app__description {
+  font-size: .75rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.app__link {
+  color: #fff;
+}
+
+.app__bottom {
+  flex: 1;
+  display: flex;
+  width: 100vw;
+  padding: .4rem;
 }
 
 .app__half {
@@ -65,16 +92,12 @@ body {
   position: relative;
   flex-direction: column;
   flex-shrink: 0;
-  width: 50%;
+  width: calc(50% - .2rem);
   height: 100%;
   margin-right: .4rem;
   padding: .4rem;
   border-radius: var(--radius);
   background-color: #fff;
-}
-
-.app__half:last-of-type {
-  margin-right: 0;
 }
 
 .app__top {

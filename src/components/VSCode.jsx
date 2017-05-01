@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { html } from 'common-tags';
 
 class VSCode extends Component {
-  constructor() {
-    super();
-    this.renderVSCodeVersion = this.renderVSCodeVersion.bind(this);
-  }
-
   renderVSCodeVersion(snippet) {
 
     // escape " with \"

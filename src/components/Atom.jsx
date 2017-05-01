@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { html } from 'common-tags';
 
 class Atom extends Component {
-  constructor() {
-    super();
-    this.renderSnippet = this.renderSnippet.bind(this);
-  }
 
   renderSnippet(snippet) {
     return html`
