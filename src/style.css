@@ -84,7 +84,7 @@ body {
   flex: 1;
   display: flex;
   width: 100vw;
-  padding: .4rem;
+  padding: 1.6rem;
 }
 
 .app__half {
