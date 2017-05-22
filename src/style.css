@@ -93,7 +93,6 @@ body {
   flex-direction: column;
   flex-shrink: 0;
   width: calc(50% - .2rem);
-  height: 100%;
   margin-right: .4rem;
   padding: .4rem;
   border-radius: var(--radius);
@@ -120,7 +119,7 @@ body {
 
 .app__main {
   display: flex;
-  height: 100%;
+  flex-grow: 1;
 }
 
 /* btn */
@@ -167,7 +166,7 @@ body {
   border: 1px solid var(--gray);
   border-radius: var(--radius);
   outline: 0;
-  background: #fff;
+  background-color: #fff;
   color: inherit;
   font: inherit;
   resize: none;
