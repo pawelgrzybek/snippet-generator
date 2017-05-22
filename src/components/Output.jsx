@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import VSCode from './VSCode';
 import SublimeText from './SublimeText';
 import Atom from './Atom';
+import Clipboard from 'clipboard';
 
 class Output extends Component {
   constructor() {
@@ -19,6 +20,10 @@ class Output extends Component {
     else if (this.props.mode === 'atom') {
       return <Atom snippet={this.props.snippet} description={this.props.description} tabtrigger={this.props.tabtrigger} />
     }
+  }
+
+  componentDidMount() {
+    new Clipboard('.copy');
   }
 
   render() {
@@ -39,6 +44,8 @@ class Output extends Component {
 
         <div className="app__main">
           {this.renderSnippet()}
+
+          <button className="copy" data-clipboard-target=".pre">Copy</button>
         </div>
       </div>
     );

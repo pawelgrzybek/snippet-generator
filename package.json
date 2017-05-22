@@ -26,6 +26,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "clipboard": "1.6.1",
     "common-tags": "^1.4.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
