@@ -4,7 +4,7 @@ import { html } from 'common-tags';
 class SublimeText extends Component {
 
   renderSnippet(snippet) {
-    const regexpMagic = /(\$)([a-z(]+)/gi;
+    const regexpMagic = /(\$)([a-z(]+)([^$])/gi;
     const escapedSnippet = snippet.replace(regexpMagic, `\\$1$2`);
 
     return html`
