@@ -52,6 +52,10 @@ class App extends React.Component {
     this.setState({
       mode
     });
+
+    var searchParams = new URLSearchParams('');
+    searchParams.append('app', mode);
+    console.log(searchParams);
   }
 
   render() {
@@ -81,6 +85,6 @@ class App extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default App;
