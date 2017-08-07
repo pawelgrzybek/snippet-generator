@@ -3,7 +3,7 @@ import Header from './Header';
 import Input from './Input';
 import Output from './Output';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
 
