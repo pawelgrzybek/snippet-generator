@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './Header';
 import Input from './Input';
 import Output from './Output';
@@ -52,10 +52,6 @@ class App extends React.Component {
     this.setState({
       mode
     });
-
-    var searchParams = new URLSearchParams('');
-    searchParams.append('app', mode);
-    console.log(searchParams);
   }
 
   render() {
