@@ -18,19 +18,20 @@ class Input extends Component {
 
         <div className="app__top">
           <div className="app__topitem">
-            <input type="text" className="input" placeholder="Description…" defaultValue={this.props.description} onChange={this.props.updatedescription}/>
+            <input type="text" className="input" name="description" placeholder="Description…" defaultValue={this.props.description} onInput={e => this.props.onInput(e)}/>
           </div>
           <div className="app__topitem">
-            <input type="text" className="input" placeholder="Tab trigger…" defaultValue={this.props.tabtrigger} onChange={this.props.updatetabtrigger}/>
+            <input type="text" className="input" name="tabTrigger" placeholder="Tab trigger…" defaultValue={this.props.tabtrigger} onInput={e => this.props.onInput(e)}/>
           </div>
         </div>
 
         <div className="app__main">
           <textarea
             className="input"
+            name="snippet"
             placeholder="Your snippet…"
             defaultValue={this.props.snippet}
-            onChange={this.props.updatesnippet}
+            onInput={e => this.props.onInput(e)}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
