@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
 import Input from './Input';
 import Output from './Output';
