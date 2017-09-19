@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
 import Input from './Input';
 import Output from './Output';
@@ -14,27 +14,15 @@ class App extends Component {
       mode: 'vscode'
     };
 
-    this.updateDescription = this.updateDescription.bind(this);
-    this.updateTabTrigger = this.updateTabTrigger.bind(this);
-    this.updateSnippet = this.updateSnippet.bind(this);
+    this.onInput = this.onInput.bind(this);
     this.updateMode = this.updateMode.bind(this);
   }
 
-  updateDescription(e) {
-    this.setState({
-      description: e.target.value
-    });
-  }
+  onInput(e) {
+    const { name, value } = e.target;
 
-  updateTabTrigger(e) {
     this.setState({
-      tabTrigger: e.target.value
-    });
-  }
-
-  updateSnippet(e) {
-    this.setState({
-      snippet: e.target.value
+      [name]: value
     });
   }
 
@@ -66,9 +54,7 @@ class App extends Component {
             tabtrigger={this.state.tabTrigger}
             snippet={this.state.snippet}
             mode={this.state.mode}
-            updatedescription={this.updateDescription}
-            updatetabtrigger={this.updateTabTrigger}
-            updatesnippet={this.updateSnippet}
+            onInput={this.onInput}
           />
           <Output
             description={this.state.description}
