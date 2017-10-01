@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CodeBox from './CodeBox';
 
 class Input extends Component {
   renderInfo() {
@@ -26,7 +27,7 @@ class Input extends Component {
         </div>
 
         <div className="app__main">
-          <textarea
+          {/* <textarea
             className="input"
             name="snippet"
             placeholder="Your snippet…"
@@ -38,7 +39,12 @@ class Input extends Component {
             spellCheck="false"
             wrap="off"
           >
-          </textarea>
+          </textarea> */}
+          <CodeBox
+            className="input"
+            onInput={this.props.onInput}
+            defaultValue={this.props.snippet}
+          />
 
           {this.renderInfo()}
 
