@@ -16,6 +16,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.1.0",
     "css-loader": "^0.28.7",
     "file-loader": "^0.11.2",
     "html-loader": "^0.5.1",
@@ -29,6 +30,7 @@
     "clipboard": "1.7.1",
     "common-tags": "^1.4.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-monaco-editor": "^0.10.1"
   }
 }
