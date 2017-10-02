@@ -44,19 +44,6 @@ class Input extends Component {
 
         <Language onInput={this.onLangChange}/>
         <div className="app__main">
-          {/* <textarea
-            className="input"
-            name="snippet"
-            placeholder="Your snippet…"
-            defaultValue={this.props.snippet}
-            onInput={e => this.props.onInput(e)}
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck="false"
-            wrap="off"
-          >
-          </textarea> */}
           <CodeBox
             className="input"
             onInput={this.props.onInput}
