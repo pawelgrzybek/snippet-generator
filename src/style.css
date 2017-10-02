@@ -122,6 +122,11 @@ body {
   flex-grow: 1;
 }
 
+.app__langselect{
+  width: 100%;
+  height: 30px;
+}
+
 /* btn */
 
 .btn {

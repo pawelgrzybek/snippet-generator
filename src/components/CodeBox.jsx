@@ -19,7 +19,6 @@ class CodeBox extends Component {
               value: newValue
             }
         });
-    console.log('onChange', newValue, e);
   }
   render() {
     const code = this.props.defaultValue;
@@ -30,7 +29,7 @@ class CodeBox extends Component {
       <MonacoEditor
         width="100%"
         height="600"
-        language="javascript"
+        language={this.props.langtype}
         value={code}
         options={options}
         onChange={this.onChange}
