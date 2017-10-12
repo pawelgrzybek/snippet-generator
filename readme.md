@@ -1,3 +1,3 @@
-# Snippet Generator
+# snippet generator
 
-[Snippet Generator](https://pawelgrzybek.com/snippet-generator/) is a tiny react app that makes snippets creation much more user friendly.
+[Snippet generator](https://pawelgrzybek.com/snippet-generator/) is a tiny React app to help you create Visual Studio Code, Sublime Text and Atom snippets. Enjoy!
