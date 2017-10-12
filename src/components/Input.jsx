@@ -1,6 +1,33 @@
 import React, { Component } from 'react';
 
 class Input extends Component {
+  componentDidMount() {
+    window.addEventListener('keydown', e => {
+      if (e.keyCode === 9) {
+        this.skipTabAndAddTwoSpaces(e);
+      }
+    });
+  }
+
+  skipTabAndAddTwoSpaces(e) {
+    if (document.activeElement === this.textareaRef) {
+      e.preventDefault();
+
+      const initialSelectrionStart = this.textareaRef.selectionStart;
+      const initialSelectrionEnd = this.textareaRef.selectionEnd;
+      const stringBeforeCaret = this.textareaRef.value.substr(0, initialSelectrionStart);
+      const stringAfterCaret = this.textareaRef.value.substr(initialSelectrionEnd, this.textareaRef.textLength);
+
+      const newValue = `${stringBeforeCaret}  ${stringAfterCaret}`;
+
+      this.textareaRef.value = newValue;
+      this.textareaRef.selectionStart = initialSelectrionStart + 2;
+      this.textareaRef.selectionEnd = initialSelectrionStart + 2;
+
+      this.props.onInput(e);
+    }
+  }
+
   renderInfo() {
 
     const docs = {
@@ -27,18 +54,18 @@ class Input extends Component {
 
         <div className="app__main">
           <textarea
+            ref={input => this.textareaRef = input}
             className="input"
             name="snippet"
             placeholder="Your snippet…"
             defaultValue={this.props.snippet}
-            onInput={e => this.props.onInput(e)}
+            onChange={e => this.props.onInput(e)}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
             wrap="off"
-          >
-          </textarea>
+          />
 
           {this.renderInfo()}
 
