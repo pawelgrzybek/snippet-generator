@@ -31,7 +31,7 @@ class App extends Component {
       document.documentElement.style.setProperty('--color', '#3B393C');
     }
     else if (mode === 'sublimetext') {
-      document.documentElement.style.setProperty('--color', '#FF9800');
+      document.documentElement.style.setProperty('--color', '#E58100');
     }
     else if (mode === 'atom') {
       document.documentElement.style.setProperty('--color', '#40a977');
