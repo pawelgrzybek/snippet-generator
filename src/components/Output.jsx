@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import VSCode from './VSCode';
 import SublimeText from './SublimeText';
 import Atom from './Atom';
@@ -51,5 +52,13 @@ class Output extends Component {
     );
   }
 }
+
+Output.propTypes = {
+  mode: PropTypes.string.isRequired,
+  snippet: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  tabtrigger: PropTypes.string.isRequired,
+  updatemode: PropTypes.func.isRequired,
+};
 
 export default Output;

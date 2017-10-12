@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { html } from 'common-tags';
 
 class SublimeText extends Component {
@@ -28,5 +29,11 @@ class SublimeText extends Component {
     );
   }
 }
+
+SublimeText.propTypes = {
+  description: PropTypes.string.isRequired,
+  tabtrigger: PropTypes.string.isRequired,
+  snippet: PropTypes.string.isRequired,
+};
 
 export default SublimeText;

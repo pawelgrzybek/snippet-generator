@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { html } from 'common-tags';
 
 class VSCode extends Component {
@@ -33,5 +34,11 @@ class VSCode extends Component {
     );
   }
 }
+
+VSCode.propTypes = {
+  description: PropTypes.string.isRequired,
+  tabtrigger: PropTypes.string.isRequired,
+  snippet: PropTypes.string.isRequired,
+};
 
 export default VSCode;

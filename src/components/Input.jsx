@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Input extends Component {
   componentDidMount() {
@@ -36,6 +37,7 @@ class Input extends Component {
       atom: 'http://flight-manual.atom.io/using-atom/sections/snippets/',
     };
 
+    // eslint-disable-next-line no-template-curly-in-string
     return <p className="info">To declare a placeholder: <span className="info__select">{'${1:example}'}</span> | <a className="info__link" href={docs[this.props.mode]} target="_blank">More info</a></p>;
   }
 
@@ -75,5 +77,13 @@ class Input extends Component {
     );
   }
 }
+
+Input.propTypes = {
+  onInput: PropTypes.func.isRequired,
+  mode: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  tabtrigger: PropTypes.string.isRequired,
+  snippet: PropTypes.string.isRequired,
+};
 
 export default Input;

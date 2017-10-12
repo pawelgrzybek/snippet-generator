@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { html } from 'common-tags';
 
 class Atom extends Component {
@@ -21,5 +22,11 @@ class Atom extends Component {
     );
   }
 }
+
+Atom.propTypes = {
+  description: PropTypes.string.isRequired,
+  tabtrigger: PropTypes.string.isRequired,
+  snippet: PropTypes.string.isRequired,
+};
 
 export default Atom;
