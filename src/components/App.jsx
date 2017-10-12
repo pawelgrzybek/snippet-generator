@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div className="app">
 
-        <Header/>
+        <Header />
 
         <div className="app__bottom">
           <Input

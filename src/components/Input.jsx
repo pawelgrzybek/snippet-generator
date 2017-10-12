@@ -47,10 +47,10 @@ class Input extends Component {
 
         <div className="app__top">
           <div className="app__topitem">
-            <input type="text" className="input" name="description" placeholder="Description…" defaultValue={this.props.description} onInput={e => this.props.onInput(e)}/>
+            <input type="text" className="input" name="description" placeholder="Description…" defaultValue={this.props.description} onInput={e => this.props.onInput(e)} />
           </div>
           <div className="app__topitem">
-            <input type="text" className="input" name="tabTrigger" placeholder="Tab trigger…" defaultValue={this.props.tabtrigger} onInput={e => this.props.onInput(e)}/>
+            <input type="text" className="input" name="tabTrigger" placeholder="Tab trigger…" defaultValue={this.props.tabtrigger} onInput={e => this.props.onInput(e)} />
           </div>
         </div>
 
