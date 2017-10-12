@@ -28,7 +28,7 @@ class App extends Component {
 
   updateMode(mode) {
     if (mode === 'vscode') {
-      document.documentElement.style.setProperty('--color', '#1278BD');
+      document.documentElement.style.setProperty('--color', '#3B393C');
     }
     else if (mode === 'sublimetext') {
       document.documentElement.style.setProperty('--color', '#FF9800');

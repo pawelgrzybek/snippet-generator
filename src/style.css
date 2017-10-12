@@ -2,10 +2,10 @@
 
 /* globals */
 :root {
-  --color: #1278BD;
+  --color: #3B393C;
   --gray: #bbb;
-  --radius: 3px;
-  --ms: 180ms;
+  --radius: 2px;
+  --ms: 140ms;
 }
 
 html {
@@ -96,7 +96,7 @@ body {
   margin-right: .4rem;
   padding: .4rem;
   border-radius: var(--radius);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .9);
 }
 
 .app__top {
@@ -145,7 +145,7 @@ body {
 }
 
 .btn--vscode:hover {
-  background: #1278BD;
+  background: #3B393C;
 }
 
 .btn--sublimetext:hover {
