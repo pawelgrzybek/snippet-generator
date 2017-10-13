@@ -4,7 +4,7 @@
 :root {
   --color: #3B393C;
   --gray: #bbb;
-  --radius: 2px;
+  --radius: 3px;
   --ms: 140ms;
 }
 
@@ -31,8 +31,14 @@ html {
 body {
   color: #333;
   font-family: 'Source Code Pro', Consolas, monaco, monospace;
-  font-size: 1rem;
-  line-height: 1.6rem;
+  font-size: .875rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 960px){
+  body {
+    font-size: 1rem;
+  }
 }
 
 @keyframes pop {
@@ -56,10 +62,11 @@ body {
   height: 100vh;
   transition: var(--ms) background-color;
   background-color: var(--color);
+  padding: 1.5rem;
 }
 
 .app__header {
-  padding: .8rem;
+  margin-bottom: 1.5rem;
   color: #fff;
   text-align: center;
 }
@@ -67,7 +74,7 @@ body {
 .app__title {
   margin: 0;
   font-size: 1.5rem;
-  line-height: 3.2rem;
+  margin-bottom: .75rem;
 }
 
 .app__description {
@@ -83,8 +90,6 @@ body {
 .app__bottom {
   display: flex;
   flex: 1;
-  width: 100vw;
-  padding: 1.6rem;
 }
 
 .app__half {
@@ -92,9 +97,9 @@ body {
   position: relative;
   flex-direction: column;
   flex-shrink: 0;
-  width: calc(50% - .2rem);
-  margin-right: .4rem;
-  padding: .4rem;
+  width: calc(50% - .125rem);
+  margin-right: .25rem;
+  padding: .25rem;
   border-radius: var(--radius);
   background-color: rgba(255, 255, 255, .9);
 }
@@ -104,13 +109,13 @@ body {
   flex-shrink: 0;
   width: 100%;
   height: 4rem;
-  margin-bottom: .4rem;
+  margin-bottom: .25rem;
 }
 
 .app__topitem {
   display: flex;
   width: 100%;
-  margin-right: .4rem;
+  margin-right: .25rem;
 }
 
 .app__topitem:last-child {
@@ -161,7 +166,7 @@ body {
 .input {
   width: 100%;
   margin: 0;
-  padding: 1.2rem;
+  padding: 1.125rem;
   transition: var(--ms) border;
   border: 1px solid var(--gray);
   border-radius: var(--radius);
@@ -187,7 +192,7 @@ body {
 .pre {
   width: 100%;
   margin: 0;
-  padding: 1.2rem;
+  padding: 1.125rem;
   transition: var(--ms) border;
   border: 1px solid var(--gray);
   border-radius: var(--radius);
@@ -206,8 +211,8 @@ body {
 
 .info {
   position: absolute;
-  right: 1.2rem;
-  bottom: 1.2rem;
+  right: 1.125rem;
+  bottom: 1.125rem;
   font-size: .75rem;
   line-height: .75rem;
 }
@@ -221,14 +226,13 @@ body {
 
 .info__link {
   color: var(--color);
-  text-decoration: none;
 }
 
 /* copy */
 .copy {
   position: absolute;
-  right: .8rem;
-  bottom: .8rem;
+  right: .75rem;
+  bottom: .75rem;
   height: 3.2rem;
   padding: 0 1.6rem;
   transition: var(--ms) background-color;
