@@ -10,8 +10,8 @@
 
 html {
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
   text-size-adjust: 100%;
   box-sizing: border-box;
 }
@@ -60,9 +60,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding: 1.5rem;
   transition: var(--ms) background-color;
   background-color: var(--color);
-  padding: 1.5rem;
 }
 
 .app__header {
@@ -73,8 +73,8 @@ body {
 
 .app__title {
   margin: 0;
-  font-size: 1.5rem;
   margin-bottom: .75rem;
+  font-size: 1.5rem;
 }
 
 .app__description {
