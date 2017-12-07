@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+       url('../fonts/source-code-pro-v7-latin-regular.woff2') format('woff2'),
+       url('../fonts/source-code-pro-v7-latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
+       url('../fonts/source-code-pro-v7-latin-700.woff2') format('woff2'),
+       url('../fonts/source-code-pro-v7-latin-700.woff') format('woff');
+}
 
 * {
   margin: 0;

@@ -28,7 +28,6 @@ module.exports = {
             ['es2015', { modules: false }],
             'react'
           ],
-          plugins: ['transform-class-properties']
         },
       },
       {
@@ -39,21 +38,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.html$/,
-        loader: 'html-loader'
+        test: /\.(woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/fonts/[name].[ext]',
+        },
       },
       {
-        test: /.*\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: 'assets/[name].[ext]',
-              limit: 5000
-            }
-          }
-        ]
-      }
+        test: /\.(ico|png|jpg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/img/[name].[ext]',
+        },
+      },
     ]
   },
   plugins: [
@@ -75,6 +72,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      title: 'snippet generator',
+      description: 'Snippet generator for Visual Studio Code, Sublime Text and Atom. Enjoy :-)',
+      url: 'https://pawelgrzybek.com/snippet-generator/',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
