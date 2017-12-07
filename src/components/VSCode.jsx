@@ -28,7 +28,7 @@ class VSCode extends Component {
 
   render() {
     return (
-      <pre className="pre">
+      <pre className="app__pre">
         {this.renderVSCodeVersion(this.props.snippet)}
       </pre>
     );

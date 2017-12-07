@@ -23,7 +23,7 @@ class SublimeText extends Component {
 
   render() {
     return (
-      <pre className="pre">
+      <pre className="app__pre">
         {this.renderSnippet(this.props.snippet)}
       </pre>
     );

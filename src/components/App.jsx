@@ -44,11 +44,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className={`app app--${this.state.mode}`} >
 
         <Header />
 
-        <div className="app__bottom">
+        <div className="app__main">
           <Input
             description={this.state.description}
             tabtrigger={this.state.tabTrigger}
