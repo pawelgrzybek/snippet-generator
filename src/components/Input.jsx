@@ -7,7 +7,7 @@ class Input extends Component {
       if (e.keyCode === 9) {
         this.skipTabAndAddTwoSpaces(e);
       }
-      if (e.keyCode === 73 && e.ctrlKey) {
+      if (e.keyCode === 73 && (e.ctrlKey || e.metaKey)) {
         this.addPlaceHolder(e);
       }
     });
@@ -59,8 +59,10 @@ class Input extends Component {
       atom: 'http://flight-manual.atom.io/using-atom/sections/snippets/',
     };
 
+    const platformKey = navigator.platform === 'MacIntel' ? '⌘' : 'ctrl';
+
     // eslint-disable-next-line no-template-curly-in-string
-    return <p className="app__info">To declare a placeholder(cmd+i): <span className="app__infoselect">{'${1:example}'}</span> | <a className="app__infolink" href={docs[this.props.mode]} target="_blank">More info</a></p>;
+    return <p className="app__info">To declare a placeholder ({ platformKey } + i): <span className="app__infoselect">{'${1:example}'}</span> | <a className="app__infolink" href={docs[this.props.mode]} target="_blank">More info</a></p>;
   }
 
   render() {
