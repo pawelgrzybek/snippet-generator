@@ -72,7 +72,7 @@ body {
   flex-direction: column;
   flex-shrink: 0;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1440px;
   margin-bottom: 8px;
   padding: 16px;
   color: #fff;
@@ -107,7 +107,7 @@ body {
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1440px;
 }
 
 @media screen and (min-width: 960px){
