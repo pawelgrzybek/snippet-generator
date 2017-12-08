@@ -1,0 +1,305 @@
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+       url('../fonts/source-code-pro-v7-latin-regular.woff2') format('woff2'),
+       url('../fonts/source-code-pro-v7-latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
+       url('../fonts/source-code-pro-v7-latin-700.woff2') format('woff2'),
+       url('../fonts/source-code-pro-v7-latin-700.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+/* app */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 8px;
+  transition: background-color 140ms;
+}
+
+.app--vscode {
+  background-color: #006EB4;
+}
+
+.app--sublimetext {
+  background-color: #4B4B4B;
+}
+
+.app--atom {
+  background-color: #40a977;
+}
+
+@media screen and (min-width: 960px){
+  .app {
+    height: 100vh;
+    padding: 32px;
+  }
+}
+
+.app__header {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 1240px;
+  margin-bottom: 8px;
+  padding: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (min-width: 960px){
+  .app__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding: 0;
+  }
+}
+
+.app__title {
+  font-size: 18px;
+}
+
+.app__subtitle {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.app__link {
+  color: inherit;
+}
+
+.app__main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1240px;
+}
+
+@media screen and (min-width: 960px){
+  .app__main {
+    flex-direction: row;
+  }
+}
+
+.app__half {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .75);
+  overflow: hidden;
+}
+
+@media screen and (min-width: 960px){
+  .app__half {
+    width: 50%;
+  }
+}
+
+.app__halftop {
+  display: flex;
+  flex-basis: 64px;
+  flex-shrink: 0;
+  padding: 2px;
+}
+
+.app__input {
+  flex: 1;
+  width: 100%;
+  margin: 2px;
+  padding: 0 16px;
+  transition: box-shadow 140ms;
+  border: 0;
+  border-radius: 2px;
+  outline: none;
+  background-color: #fff;
+  font: inherit;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+}
+
+.app--vscode .app__input:focus {
+  box-shadow: inset 0 0 0 1px #006EB4;
+}
+
+.app--sublimetext .app__input:focus {
+  box-shadow: inset 0 0 0 1px #4B4B4B;
+}
+
+.app--atom .app__input:focus {
+  box-shadow: inset 0 0 0 1px #40a977;
+}
+
+.app__halfbottom {
+  display: flex;
+  position: relative;
+  flex: 1;
+  min-height: 160px;
+  padding: 0 4px 4px;
+  overflow: hidden;
+}
+
+.app__textarea {
+  display: flex;
+  flex: 1;
+  padding: 16px;
+  transition: box-shadow 140ms;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background-color: #fff;
+  font: inherit;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+  resize: none;
+}
+
+.app--vscode .app__textarea:focus {
+  box-shadow: inset 0 0 0 1px #006EB4;
+}
+
+.app--sublimetext .app__textarea:focus {
+  box-shadow: inset 0 0 0 1px #4B4B4B;
+}
+
+.app--atom .app__textarea:focus {
+  box-shadow: inset 0 0 0 1px #40a977;
+}
+
+.app__info {
+  display: none;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 960px){
+  .app__info {
+    display: block;
+  }
+}
+
+.app__infoselect {
+  transition: color 140ms;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -webkit-user-select: all;
+  user-select: all;
+}
+
+.app--vscode .app__infolink {
+  color: #006EB4;
+}
+
+.app--sublimetext .app__infolink {
+  color: #4B4B4B;
+}
+
+.app--atom .app__infolink {
+  color: #40a977;
+}
+
+/* btn */
+
+.app__button {
+  flex: 1;
+  margin: 2px;
+  padding: 0 16px;
+  transition: background-color 140ms;
+  border: 0;
+  border-radius: 2px;
+  outline: 0;
+  background-color: rgba(0, 0, 0, .25);
+  color: #fff;
+  font: inherit;
+  white-space:nowrap;
+  cursor: pointer;
+}
+
+.app__button--vscode.app__button--active {
+  background-color: #006EB4;
+}
+
+.app__button--sublimetext.app__button--active {
+  background-color: #4B4B4B;
+}
+
+.app__button--atom.app__button--active {
+  background-color: #40a977;
+}
+
+.app__pre {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  border-radius: 2px;
+  background-color: #fff;
+  font: inherit;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+  overflow: auto;
+  resize: none;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -webkit-user-select: all;
+  user-select: all;
+}
+
+.app__copy {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  font: inherit;
+  line-height: 56px;
+  cursor: pointer;
+}
+
+.app--vscode .app__copy {
+  background-color: #006EB4;
+}
+
+.app--sublimetext .app__copy {
+  background-color: #4B4B4B;
+}
+
+.app--atom .app__copy {
+  background-color: #40a977;
+}
