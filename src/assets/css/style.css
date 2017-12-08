@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
-  font-display: swap;
   font-weight: 400;
+  font-display: swap;
   src: local('Source Code Pro'), local('SourceCodePro-Regular'),
        url('../fonts/source-code-pro-v7-latin-regular.woff2') format('woff2'),
        url('../fonts/source-code-pro-v7-latin-regular.woff') format('woff');
@@ -11,8 +11,8 @@
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
-  font-display: swap;
   font-weight: 700;
+  font-display: swap;
   src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'),
        url('../fonts/source-code-pro-v7-latin-700.woff2') format('woff2'),
        url('../fonts/source-code-pro-v7-latin-700.woff') format('woff');
@@ -40,10 +40,10 @@ body {
 /* app */
 .app {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  align-items: center;
   width: 100vw;
+  min-height: 100vh;
   padding: 8px;
   transition: background-color 140ms;
 }
@@ -62,15 +62,15 @@ body {
 
 @media screen and (min-width: 960px){
   .app {
-    padding: 32px;
     height: 100vh;
+    padding: 32px;
   }
 }
 
 .app__header {
   display: flex;
-  flex-shrink: 0;
   flex-direction: column;
+  flex-shrink: 0;
   width: 100%;
   max-width: 1240px;
   margin-bottom: 8px;
@@ -104,8 +104,8 @@ body {
 
 .app__main {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
+  flex-grow: 1;
   width: 100%;
   max-width: 1240px;
 }
@@ -119,10 +119,10 @@ body {
 .app__half {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  background: rgba(255, 255, 255, .75);
   margin: 2px;
   border-radius: 2px;
+  background: rgba(255, 255, 255, .75);
+  overflow: hidden;
 }
 
 @media screen and (min-width: 960px){
@@ -143,13 +143,13 @@ body {
   width: 100%;
   margin: 2px;
   padding: 0 16px;
+  transition: box-shadow 140ms;
   border: 0;
   border-radius: 2px;
+  outline: none;
   background-color: #fff;
   font: inherit;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
-  outline: none;
-  transition: box-shadow 140ms;
 }
 
 .app--vscode .app__input:focus {
@@ -166,25 +166,25 @@ body {
 
 .app__halfbottom {
   display: flex;
-  flex: 1;
-  overflow: hidden;
-  min-height: 160px;
   position: relative;
+  flex: 1;
+  min-height: 160px;
   padding: 0 4px 4px;
+  overflow: hidden;
 }
 
 .app__textarea {
   display: flex;
   flex: 1;
+  padding: 16px;
+  transition: box-shadow 140ms;
   border: none;
   border-radius: 2px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
-  font: inherit;
-  padding: 16px;
-  background-color: #fff;
-  resize: none;
   outline: none;
-  transition: box-shadow 140ms;
+  background-color: #fff;
+  font: inherit;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+  resize: none;
 }
 
 .app--vscode .app__textarea:focus {
@@ -215,11 +215,11 @@ body {
 }
 
 .app__infoselect {
+  transition: color 140ms;
   -moz-user-select: all;
   -ms-user-select: all;
   -webkit-user-select: all;
   user-select: all;
-  transition: color 140ms;
 }
 
 .app--vscode .app__infolink {
@@ -239,16 +239,16 @@ body {
 .app__button {
   flex: 1;
   margin: 2px;
+  padding: 0 16px;
+  transition: background-color 140ms;
   border: 0;
   border-radius: 2px;
+  outline: 0;
   background-color: rgba(0, 0, 0, .25);
   color: #fff;
   font: inherit;
   white-space:nowrap;
   cursor: pointer;
-  outline: 0;
-  padding: 0 16px;
-  transition: background-color 140ms;
 }
 
 .app__button--vscode.app__button--active {
@@ -264,15 +264,15 @@ body {
 }
 
 .app__pre {
-  overflow: auto;
-  resize: none;
   flex: 1;
+  padding: 16px;
   border: none;
   border-radius: 2px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
-  font: inherit;
-  padding: 16px;
   background-color: #fff;
+  font: inherit;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+  overflow: auto;
+  resize: none;
   -moz-user-select: all;
   -ms-user-select: all;
   -webkit-user-select: all;
