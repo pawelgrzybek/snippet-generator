@@ -58,6 +58,64 @@ body {
   background-color: #40a977;
 }
 
+.app--model {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.app--model__close {
+  display: none;
+}
+
+.app--model__open {
+  display: block;
+}
+
+.app--model .app--model-background{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.7;
+  background-color: black;
+}
+
+.app--model .share-model{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  z-index: 1;
+}
+
+.app--model .share-model .share-link-label{
+  display: block;
+  margin: auto;
+  width: 95%;
+}
+
+.app--model .share-model .share-link{
+  display: block;
+  margin: auto;
+  width: 95%;
+}
+
+.app--model .share-model .close-btn{
+  cursor: pointer;
+  float: right;
+  margin-right: 10px; 
+}
+
+.app--model .share-model .close-btn::after{
+  content: '✖';
+}
+
 @media screen and (min-width: 960px) {
   .app {
     height: 100vh;
@@ -85,6 +143,14 @@ body {
     margin-bottom: 32px;
     padding: 0;
   }
+}
+
+.app__menu{
+  padding: 2px;
+}
+
+.app__menu .app__menu-item{
+  display: inline-block;
 }
 
 .app__title {
