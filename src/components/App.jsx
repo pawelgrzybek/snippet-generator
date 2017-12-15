@@ -18,6 +18,19 @@ class App extends Component {
     this.updateMode = this.updateMode.bind(this);
   }
 
+  componentWillMount() {
+    const loadedUrl = new URL(window.location.href);
+
+    this.setState(() => {
+      return {
+        description: loadedUrl.searchParams.get('description') || '',
+        tabtrigger: loadedUrl.searchParams.get('tabtrigger') || '',
+        snippet: loadedUrl.searchParams.get('snippet') || '',
+        mode: loadedUrl.searchParams.get('mode') || 'vscode',
+      };
+    });
+  }
+
   onInput(e) {
     const { name, value } = e.target;
 

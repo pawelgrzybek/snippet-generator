@@ -281,10 +281,7 @@ body {
   user-select: all;
 }
 
-.app__copy {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
+.app__btn {
   padding: 0 16px;
   border: 0;
   border-radius: 2px;
@@ -292,16 +289,23 @@ body {
   font: inherit;
   line-height: 56px;
   cursor: pointer;
+  margin-left: 4px;
 }
 
-.app--vscode .app__copy {
+.app--vscode .app__btn {
   background-color: #006eb4;
 }
 
-.app--sublimetext .app__copy {
+.app--sublimetext .app__btn {
   background-color: #4b4b4b;
 }
 
-.app--atom .app__copy {
+.app--atom .app__btn {
   background-color: #40a977;
+}
+
+.app__buttons {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
 }
