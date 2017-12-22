@@ -16,15 +16,20 @@ class App extends Component {
 
     this.onInput = this.onInput.bind(this);
     this.updateMode = this.updateMode.bind(this);
+    this.generateURL = this.generateURL.bind(this);
   }
 
   componentWillMount() {
+    if ('URLSearchParams' in window === false) {
+      return;
+    }
+
     const loadedUrl = new URL(window.location.href);
 
     this.setState(() => {
       return {
         description: loadedUrl.searchParams.get('description') || '',
-        tabtrigger: loadedUrl.searchParams.get('tabtrigger') || '',
+        tabTrigger: loadedUrl.searchParams.get('tabtrigger') || '',
         snippet: loadedUrl.searchParams.get('snippet') || '',
         mode: loadedUrl.searchParams.get('mode') || 'vscode',
       };
@@ -55,6 +60,21 @@ class App extends Component {
     });
   }
 
+  generateURL() {
+    const shareUrl = new URL(window.location.href);
+    shareUrl.searchParams.set('description', this.state.description);
+    shareUrl.searchParams.set('tabtrigger', this.state.tabTrigger);
+    shareUrl.searchParams.set('snippet', this.state.snippet);
+    shareUrl.searchParams.set('mode', this.state.mode);
+
+    history.pushState({
+      description: this.state.description,
+      tabTrigger: this.state.tabTrigger,
+      snippet: this.state.snippet,
+      mode: this.state.mode,
+    }, document.title, `${location.pathname}?${shareUrl.searchParams}`);
+  }
+
   render() {
     return (
       <div className={`app app--${this.state.mode}`} >
@@ -75,6 +95,7 @@ class App extends Component {
             snippet={this.state.snippet}
             mode={this.state.mode}
             updatemode={this.updateMode}
+            generateurl={this.generateURL}
           />
         </div>
       </div>

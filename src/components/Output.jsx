@@ -44,7 +44,7 @@ class Output extends Component {
 
           <div className="app__buttons">
             <button className="app__btn app__btncopy" data-clipboard-target=".app__pre">Copy snippet</button>
-            <button className="app__btn">Generate URL</button>
+            { 'URLSearchParams' in window && <button className="app__btn" onClick={() => this.props.generateurl()}>Generate URL</button> }
           </div>
 
         </div>
@@ -59,6 +59,7 @@ Output.propTypes = {
   description: PropTypes.string.isRequired,
   tabtrigger: PropTypes.string.isRequired,
   updatemode: PropTypes.func.isRequired,
+  generateurl: PropTypes.func.isRequired,
 };
 
 export default Output;
