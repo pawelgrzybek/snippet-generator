@@ -5,6 +5,7 @@ import { html } from 'common-tags';
 class Atom extends Component {
 
   renderSnippet(snippet) {
+    snippet = snippet.split('  ').join('\\t');
     return html`
       '${this.props.description}':
         'prefix': '${this.props.tabtrigger}'
