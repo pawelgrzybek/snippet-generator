@@ -11,8 +11,10 @@ class VSCode extends Component {
     const separatedSnippetLength = separatedSnippet.length;
 
     // add double quotes around each line apart from the last one
+    // replace double spaces with tab
     const newSnippet = separatedSnippet.map((line, index) => {
-      return index === separatedSnippetLength - 1 ? `"${line}"` : `"${line}",`;
+      const processedLine = line.split('  ').join('\\t');
+      return index === separatedSnippetLength - 1 ? `"${processedLine}"` : `"${processedLine}",`;
     });
 
     return html`
