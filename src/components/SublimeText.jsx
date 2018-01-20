@@ -6,8 +6,7 @@ class SublimeText extends Component {
 
   renderSnippet(snippet) {
     const regexpMagic = /(\$)([a-z(]+)([^$])/gi;
-    let escapedSnippet = snippet.replace(regexpMagic, '\\$1$2$3');
-    escapedSnippet = escapedSnippet.split('  ').join('\\t');
+    const escapedSnippet = snippet.replace(regexpMagic, '\\$1$2$3');
 
     return html`
       <snippet>
