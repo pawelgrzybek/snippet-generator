@@ -15,6 +15,7 @@ class App extends Component {
     };
 
     this.onInput = this.onInput.bind(this);
+    this.onOutput = this.onOutput.bind(this);
     this.updateMode = this.updateMode.bind(this);
     this.generateURL = this.generateURL.bind(this);
   }
@@ -41,6 +42,17 @@ class App extends Component {
 
     this.setState({
       [name]: value
+    });
+  }
+
+  onOutput(output) {
+    this.setState(() => {
+      return {
+        description: output.description || '',
+        tabTrigger: output.tabTrigger || '',
+        snippet: output.snippet || '',
+        mode: output.mode || 'vscode'
+      };
     });
   }
 
@@ -96,6 +108,7 @@ class App extends Component {
             mode={this.state.mode}
             updatemode={this.updateMode}
             generateurl={this.generateURL}
+            onOutput={this.onOutput}
           />
         </div>
       </div>

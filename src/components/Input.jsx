@@ -75,12 +75,12 @@ class Input extends Component {
             className="app__input"
             name="description"
             placeholder="Description…"
-            defaultValue={this.props.description}
             onInput={e => this.props.onInput(e)}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
+            value={this.props.description}
           />
 
           <input
@@ -88,12 +88,12 @@ class Input extends Component {
             className="app__input"
             name="tabTrigger"
             placeholder="Tab trigger…"
-            defaultValue={this.props.tabtrigger}
             onInput={e => this.props.onInput(e)}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
+            value={this.props.tabtrigger}
           />
         </div>
 
@@ -103,13 +103,13 @@ class Input extends Component {
             className="app__textarea"
             name="snippet"
             placeholder="Your snippet…"
-            defaultValue={this.props.snippet}
             onChange={e => this.props.onInput(e)}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
             wrap="off"
+            value={this.props.snippet}
           />
 
           {this.renderInfo()}
