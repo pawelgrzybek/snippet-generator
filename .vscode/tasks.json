@@ -6,10 +6,7 @@
     {
       "type": "npm",
       "script": "dev",
-      "problemMatcher": [],
-      "presentation": {
-        "reveal": "never"
-      }
+      "problemMatcher": []
     },
     {
       "type": "npm",

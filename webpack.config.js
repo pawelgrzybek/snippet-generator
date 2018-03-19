@@ -1,12 +1,6 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/',
-  output: {
-    path: path.join(__dirname, 'docs'),
-    filename: 'bundle.js'
-  },
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -21,12 +15,15 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: {
-          presets: [
-            ['es2015', { modules: false }],
-            'react'
-          ],
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            minimize: true
+          },
         },
       },
       {
@@ -38,26 +35,17 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'assets/fonts/[name].[ext]',
-        },
+        loader: 'file-loader'
       },
       {
         test: /\.(ico|png|jpg)$/,
         loader: 'file-loader',
-        options: {
-          name: 'assets/img/[name].[ext]',
-        },
       },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      title: 'snippet generator',
-      description: 'Snippet generator for Visual Studio Code, Sublime Text and Atom. Enjoy :-)',
-      url: 'https://pawelgrzybek.com/snippet-generator/',
     }),
   ],
   performance: {
