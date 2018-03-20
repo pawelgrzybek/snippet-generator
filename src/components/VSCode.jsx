@@ -3,6 +3,19 @@ import PropTypes from 'prop-types';
 import { html } from 'common-tags';
 
 class VSCode extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: props.description,
+      tabtrigger: props.tabtrigger,
+      snippet: props.snippet,
+      mode: 'render',
+      editValue: ''
+    };
+    this.changeHandler = this.changeHandler.bind(this);
+  }
+
   renderVSCodeVersion(snippet) {
 
     // escape " with \"
@@ -16,21 +29,62 @@ class VSCode extends Component {
     });
 
     return html`
-      "${this.props.description}": {
-        "prefix": "${this.props.tabtrigger}",
+      "${this.state.description}": {
+        "prefix": "${this.state.tabtrigger}",
         "body": [
           ${newSnippet.join('\n')}
         ],
-        "description": "${this.props.description}"
+        "description": "${this.state.description}"
       }
     `;
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      description: nextProps.description,
+      tabtrigger: nextProps.tabtrigger,
+      snippet: nextProps.snippet,
+      mode: 'render'
+    });
+  }
+
+  parseSnippet(str) {
+    try {
+      return JSON.parse(`{${str}}`);
+    }
+    catch (e) {
+      return false;
+    }
+  }
+
+  changeHandler(e) {
+    const parsedSnippet = this.parseSnippet(e.target.value);
+    this.setState({
+      mode: 'edit',
+      editValue: e.target.value
+    });
+    if (!parsedSnippet) {
+      return;
+    }
+    const { prefix, body, description } = Object.values(parsedSnippet)[0];
+    this.props.onOutput({
+      description: description || '',
+      tabTrigger: prefix || '',
+      snippet: body.join('\n') || '',
+      mode: 'vscode'
+    });
+  }
+
   render() {
+    let renderValue = '';
+    if (this.state.mode === 'edit') {
+      renderValue = this.state.editValue;
+    }
+    else {
+      renderValue = this.renderVSCodeVersion(this.state.snippet);
+    }
     return (
-      <pre className="app__pre">
-        {this.renderVSCodeVersion(this.props.snippet)}
-      </pre>
+      <textarea className="app__pre" onChange={this.changeHandler} value={renderValue} />
     );
   }
 }
@@ -39,6 +93,7 @@ VSCode.propTypes = {
   description: PropTypes.string.isRequired,
   tabtrigger: PropTypes.string.isRequired,
   snippet: PropTypes.string.isRequired,
+  onOutput: PropTypes.func.isRequired
 };
 
 export default VSCode;

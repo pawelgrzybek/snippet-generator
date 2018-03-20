@@ -13,7 +13,7 @@ class Output extends Component {
 
   renderSnippet() {
     if (this.props.mode === 'vscode') {
-      return <VSCode snippet={this.props.snippet} description={this.props.description} tabtrigger={this.props.tabtrigger} />;
+      return <VSCode snippet={this.props.snippet} description={this.props.description} tabtrigger={this.props.tabtrigger} onOutput={this.props.onOutput} />;
     }
     else if (this.props.mode === 'sublimetext') {
       return <SublimeText snippet={this.props.snippet} description={this.props.description} tabtrigger={this.props.tabtrigger} />;
@@ -60,6 +60,7 @@ Output.propTypes = {
   tabtrigger: PropTypes.string.isRequired,
   updatemode: PropTypes.func.isRequired,
   generateurl: PropTypes.func.isRequired,
+  onOutput: PropTypes.func.isRequired
 };
 
 export default Output;
