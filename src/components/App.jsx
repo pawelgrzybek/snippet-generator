@@ -4,19 +4,11 @@ import Input from './Input';
 import Output from './Output';
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      description: '',
-      tabTrigger: '',
-      snippet: '',
-      mode: 'vscode'
-    };
-
-    this.onInput = this.onInput.bind(this);
-    this.updateMode = this.updateMode.bind(this);
-    this.generateURL = this.generateURL.bind(this);
+  state = {
+    description: '',
+    tabTrigger: '',
+    snippet: '',
+    mode: 'vscode'
   }
 
   componentWillMount() {
@@ -36,7 +28,7 @@ class App extends Component {
     });
   }
 
-  onInput(e) {
+  onInput = e => {
     const { name, value } = e.target;
 
     this.setState({
@@ -44,7 +36,7 @@ class App extends Component {
     });
   }
 
-  updateMode(mode) {
+  updateMode = mode => {
     if (mode === 'vscode') {
       document.documentElement.style.setProperty('--color', '#3B393C');
     }
@@ -60,7 +52,7 @@ class App extends Component {
     });
   }
 
-  generateURL() {
+  generateURL = () => {
     const shareUrl = new URL(window.location.href);
     shareUrl.searchParams.set('description', this.state.description);
     shareUrl.searchParams.set('tabtrigger', this.state.tabTrigger);
