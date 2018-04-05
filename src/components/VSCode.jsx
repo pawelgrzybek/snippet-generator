@@ -7,7 +7,7 @@ class VSCode extends Component {
 
     // escape " with \"
     // split lines by line-break
-    const separatedSnippet = snippet.replace(/"/g, '\\"').split('\n');
+    const separatedSnippet = snippet.replace(/"/g, '\\"').replace(/\t/g, '\\t').split('\n');
     const separatedSnippetLength = separatedSnippet.length;
 
     // add double quotes around each line apart from the last one
