@@ -1,21 +1,30 @@
 import PropTypes from 'prop-types';
 import React, { Component, createContext } from 'react';
 
+// React team — thanks for Context API 👍
 const context = createContext();
 const { Provider: ContextProvider, Consumer } = context;
+
+// extract bits from URL to initialize state
+const loadedUrl = new URL(window.location.href);
+const loadedUrlDescription = loadedUrl.searchParams.get('description') || '';
+const loadedUrlTabtrigger = loadedUrl.searchParams.get('tabtrigger') || '';
+const loadedUrlSnippet = loadedUrl.searchParams.get('snippet') || '';
+const loadedUrlMode = loadedUrl.searchParams.get('mode') || 'vscode';
 
 class Provider extends Component {
   // state
   state = {
-    description: '',
-    tabTrigger: '',
-    snippet: '',
-    mode: 'vscode',
+    description: 'URLSearchParams' in window ? loadedUrlDescription : '',
+    tabTrigger: 'URLSearchParams' in window ? loadedUrlTabtrigger : '',
+    snippet: 'URLSearchParams' in window ? loadedUrlSnippet : '',
+    mode: 'URLSearchParams' in window ? loadedUrlMode : 'vscode',
   }
 
   // refs
   textareaRef = React.createRef();
 
+  // my methods
   onInput = e => {
     const { name, value } = e.target;
 
@@ -24,7 +33,6 @@ class Provider extends Component {
     }, this.generateURL);
   }
 
-  // my methods
   updateMode = mode => {
     if (mode === 'vscode') {
       document.documentElement.style.setProperty('--color', '#3B393C');
@@ -91,23 +99,6 @@ class Provider extends Component {
   }
 
   // react lifecycle methods
-  componentWillMount() {
-    if ('URLSearchParams' in window === false) {
-      return;
-    }
-
-    const loadedUrl = new URL(window.location.href);
-
-    this.setState(() => {
-      return {
-        description: loadedUrl.searchParams.get('description') || '',
-        tabTrigger: loadedUrl.searchParams.get('tabtrigger') || '',
-        snippet: loadedUrl.searchParams.get('snippet') || '',
-        mode: loadedUrl.searchParams.get('mode') || 'vscode',
-      };
-    });
-  }
-
   componentDidMount() {
     window.addEventListener('keydown', e => {
       // tab key (when snippet input is active)
