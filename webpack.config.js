@@ -22,13 +22,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]'
-        }
-      },
-      {
         test: /\.(ico|png|jpg)$/,
         loader: 'file-loader',
         options: {
