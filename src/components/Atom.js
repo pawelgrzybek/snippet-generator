@@ -18,7 +18,7 @@ const Atom = () => (
       <pre className="app__pre">
         {renderSnippet(
           context.state.snippet,
-          context.state.tabtrigger,
+          context.state.tabTrigger,
           context.state.description,
         )}
       </pre>
