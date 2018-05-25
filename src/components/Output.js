@@ -67,7 +67,6 @@ class Output extends Component {
 
               <div className="app__buttons">
                 <button className="app__btn app__btncopy" data-clipboard-target=".app__pre">Copy snippet</button>
-                { 'URLSearchParams' in window && <button className="app__btn" onClick={context.generateURL}>Generate URL</button> }
               </div>
 
             </div>

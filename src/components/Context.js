@@ -17,7 +17,7 @@ class Provider extends Component {
 
     this.setState({
       [name]: value
-    });
+    }, this.generateURL);
   }
 
   updateMode = mode => {
@@ -33,7 +33,7 @@ class Provider extends Component {
 
     this.setState({
       mode
-    });
+    }, this.generateURL);
   }
 
   generateURL = () => {
