@@ -13,7 +13,7 @@ const Info = () => (
       const platformKey = navigator.platform === 'MacIntel' ? '⌘' : 'ctrl';
 
       // eslint-disable-next-line no-template-curly-in-string
-      return <p className="app__info">To declare a placeholder ({ platformKey } + i): <span className="app__infoselect">{'${1:example}'}</span> | <a className="app__infolink" href={docs[context.state.mode]} target="_blank">More info</a></p>;
+      return <p className="app__info">To declare a placeholder with counter ({ platformKey } + i): <span className="app__infoselect">{'${1:example}'}</span> | <a className="app__infolink" href={docs[context.state.mode]} target="_blank">More info</a></p>;
     }}
   </Consumer>
 );

@@ -11,6 +11,7 @@ const loadedUrlDescription = loadedUrl.searchParams.get('description') || '';
 const loadedUrlTabtrigger = loadedUrl.searchParams.get('tabtrigger') || '';
 const loadedUrlSnippet = loadedUrl.searchParams.get('snippet') || '';
 const loadedUrlMode = loadedUrl.searchParams.get('mode') || 'vscode';
+const loadedUrlCounter = loadedUrl.searchParams.get('counter') || 1;
 
 class Provider extends Component {
   // state
@@ -19,6 +20,7 @@ class Provider extends Component {
     tabTrigger: 'URLSearchParams' in window ? loadedUrlTabtrigger : '',
     snippet: 'URLSearchParams' in window ? loadedUrlSnippet : '',
     mode: 'URLSearchParams' in window ? loadedUrlMode : 'vscode',
+    counter: 'URLSearchParams' in window ? loadedUrlCounter : 1,
   }
 
   // refs
@@ -27,9 +29,11 @@ class Provider extends Component {
   // my methods
   onInput = e => {
     const { name, value } = e.target;
+    const { counter } = this.state;
 
     this.setState({
-      [name]: value
+      [name]: value,
+      counter: (name === 'snippet' && value === '') ? 1 : counter,
     }, this.generateURL);
   }
 
@@ -55,12 +59,14 @@ class Provider extends Component {
     shareUrl.searchParams.set('tabtrigger', this.state.tabTrigger);
     shareUrl.searchParams.set('snippet', this.state.snippet);
     shareUrl.searchParams.set('mode', this.state.mode);
+    shareUrl.searchParams.set('counter', this.state.counter);
 
     history.pushState({
       description: this.state.description,
       tabTrigger: this.state.tabTrigger,
       snippet: this.state.snippet,
       mode: this.state.mode,
+      counter: this.state.counter,
     }, document.title, `${location.pathname}?${shareUrl.searchParams}`);
   }
 
@@ -83,19 +89,30 @@ class Provider extends Component {
 
   addPlaceHolder(e) {
     e.preventDefault();
+    const { counter, snippet } = this.state;
+    let selectedText = '';
+    if (window.getSelection) {
+      selectedText = window.getSelection().toString();
+    }
+    else if (document.selection && document.selection.type !== 'Control') {
+      selectedText = document.selection.createRange().text;
+    }
 
     const initialSelectrionStart = this.textareaRef.current.selectionStart;
     const initialSelectrionEnd = this.textareaRef.current.selectionEnd;
     const stringBeforeCaret = this.textareaRef.current.value.substr(0, initialSelectrionStart);
     const stringAfterCaret = this.textareaRef.current.value.substr(initialSelectrionEnd, this.textareaRef.current.textLength);
+    const placeholder = selectedText !== '' ? selectedText : 'example';
+    const newValue = `${stringBeforeCaret}\${${counter}:${placeholder}}${stringAfterCaret}`;
 
-    const newValue = `${stringBeforeCaret}\${1:example}${stringAfterCaret}`;
-
+    const offset = counter >= 10 ? 5 : 4;
     this.textareaRef.current.value = newValue;
-    this.textareaRef.current.selectionStart = initialSelectrionStart + 4;
-    this.textareaRef.current.selectionEnd = initialSelectrionStart + 11;
-
+    this.textareaRef.current.selectionStart = initialSelectrionStart + offset;
+    this.textareaRef.current.selectionEnd = initialSelectrionStart + placeholder.length + offset;
     this.onInput(e);
+    this.setState({
+      counter: snippet === '' ? 1 : counter + 1
+    });
   }
 
   // react lifecycle methods
