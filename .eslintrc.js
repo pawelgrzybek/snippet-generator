@@ -3,6 +3,7 @@
 // Explicitly add more rules categorized in categories taken from official docs
 
 module.exports = {
+  parser: 'babel-eslint',
   extends: 'eslint:recommended',
 
   parserOptions: {
