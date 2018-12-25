@@ -2,23 +2,22 @@ import React from 'react';
 import { html } from 'common-tags';
 import { Consumer } from './Context';
 
+const formatSnippet = snippet => (
+  snippet
+    .replace(/"/g, '\\"') /* escape quotes */
+    .replace('\\$', '\\\\$') /* escape `$` */
+    .split('\n') /* split lines */
+    .map(line => `"${line}"`) /* add quotes to lines */
+    .join(',\n')
+);
+
 const renderSnippet = (snippet, tabtrigger, description) => {
-
-  // escape " with \"
-  // split lines by line-break
-  const separatedSnippet = snippet.replace(/"/g, '\\"').split('\n');
-  const separatedSnippetLength = separatedSnippet.length;
-
-  // add double quotes around each line apart from the last one
-  const newSnippet = separatedSnippet.map((line, index) => {
-    return index === separatedSnippetLength - 1 ? `"${line}"` : `"${line}",`;
-  });
 
   return html`
     "${description}": {
       "prefix": "${tabtrigger}",
       "body": [
-        ${newSnippet.join('\n')}
+        ${formatSnippet(snippet)}
       ],
       "description": "${description}"
     }
