@@ -6,6 +6,7 @@ const formatSnippet = snippet => (
   snippet
     .replace(/\\/g, '\\\\\\\\') /* escape `\`: in JSON, `\\` or `\\\\` escape one `\` */
     .replace(/"/g, '\\"') /* escape quotes */
+    .replace(/\$/g, '\\\\$') /* escape `$`: VSCode use `$` as placeholder*/
     .split('\n') /* split lines */
     .map(line => `"${line}"`) /* add quotes to lines */
     .join(',\n')
