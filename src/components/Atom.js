@@ -1,8 +1,9 @@
-import React from 'react';
-import { html } from 'common-tags';
-import { Consumer } from './Context';
+import React from "react";
+import { html } from "common-tags";
+import { Consumer } from "./Context";
 
 const renderSnippet = (snippet, tabtrigger, description) => {
+  // prettier-ignore
   return html`
     '${description}':
       'prefix': '${tabtrigger}'
@@ -19,7 +20,7 @@ const Atom = () => (
         {renderSnippet(
           context.state.snippet,
           context.state.tabTrigger,
-          context.state.description,
+          context.state.description
         )}
       </pre>
     )}

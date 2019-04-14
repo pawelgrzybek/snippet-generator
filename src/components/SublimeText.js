@@ -1,11 +1,11 @@
-import React from 'react';
-import { html } from 'common-tags';
-import { Consumer } from './Context';
+import React from "react";
+import { html } from "common-tags";
+import { Consumer } from "./Context";
 
 const renderSnippet = (snippet, tabtrigger, description) => {
   const regexpMagic = /(\$)([a-z(]+)([^$])/gi;
-  const escapedSnippet = snippet.replace(regexpMagic, '\\$1$2$3');
-
+  const escapedSnippet = snippet.replace(regexpMagic, "\\$1$2$3");
+  // prettier-ignore
   return html`
     <snippet>
       <content><![CDATA[
@@ -26,7 +26,7 @@ const SublimeText = () => (
         {renderSnippet(
           context.state.snippet,
           context.state.tabTrigger,
-          context.state.description,
+          context.state.description
         )}
       </pre>
     )}

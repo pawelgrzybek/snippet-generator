@@ -1,6 +1,6 @@
-import React from 'react';
-import { Consumer } from './Context';
-import Info from './Info';
+import React from "react";
+import { Consumer } from "./Context";
+import Info from "./Info";
 
 const Input = () => (
   <Consumer>
