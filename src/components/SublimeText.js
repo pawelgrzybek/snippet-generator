@@ -10,12 +10,12 @@ const renderSnippet = (snippet, tabtrigger, description) => {
     <snippet>
       <content><![CDATA[
     ${escapedSnippet}
-    ]]></content >
-      <description>${description}</description>
+    ]]></content>
       <tabTrigger>${tabtrigger}</tabTrigger>
+      <description>${description}</description>
       <!-- Optional: Set a scope to limit where the snippet will trigger -->
       <!-- <scope >source.python</scope > -->
-    </snippet >
+    </snippet>
   `;
 };
 
