@@ -9,7 +9,7 @@ import "./assets/css/style.css";
 import App from "./components/App";
 import { Provider } from "./components/Context";
 
-// asstes
+// assets
 import "./assets/img/favicon.ico";
 import "./assets/img/favicon-16x16.png";
 import "./assets/img/favicon-32x32.png";
