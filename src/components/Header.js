@@ -23,7 +23,7 @@ const Header = () => (
         Share on Twitter
       </a>{" "}
       |{" "}
-      <a className="app__link" href="https://paypal.me/pools/c/8fz8qLn55j">
+      <a className="app__link" href="https://paypal.me/pools/c/8p6yWl7QVT">
         Support
       </a>
     </p>
