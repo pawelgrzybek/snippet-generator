@@ -18,7 +18,7 @@ const Header = () => (
       |{" "}
       <a
         className="app__link"
-        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fpawelgrzybek.com%2Fsnippet-generator%2F&text=Snippet%20generator%20for%20VS%20Code%2C%20Sublime%20Text%20and%20Atom&amp;via=pawelgrzybek"
+        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsnippet-generator.app%2F&text=Snippet%20generator%20for%20VS%20Code%2C%20Sublime%20Text%20and%20Atom&amp;via=pawelgrzybek"
       >
         Share on Twitter
       </a>{" "}
