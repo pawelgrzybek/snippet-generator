@@ -73,15 +73,13 @@ body {
 
 .app__title {
   font-size: 18px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .app__subtitle {
   font-size: 14px;
   line-height: 24px;
-}
-
-.app__link {
-  color: inherit;
 }
 
 .app__main {

@@ -6,4 +6,10 @@ I built it for fun. It is hosted on Netlify for free (thanks Netlify). The only 
 
 Enjoy!
 
+## Development Setup:
+1. Fork and Clone the repo.
+2. On the project directory, run: `yarn install`
+3. Start the project locally: `yarn dev`
+4. Enjoy!
+
 [![snippet generator by Pawel Grzybek](snippet-generator.jpg)](https://pawelgrzybek.com/snippet-generator/)

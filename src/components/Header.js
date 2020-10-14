@@ -2,7 +2,9 @@ import React from "react";
 
 const Header = () => (
   <div className="app__header">
-    <h1 className="app__title">snippet generator</h1>
+    <a className="app__title" href="/">
+      snippet generator
+    </a>{" "}
     <p className="app__subtitle">
       Made by{" "}
       <a className="app__link" href="https://pawelgrzybek.com">
