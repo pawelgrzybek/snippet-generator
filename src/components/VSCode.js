@@ -17,12 +17,14 @@ const renderSnippet = (snippet, tabtrigger, description) => {
   });
   // prettier-ignore
   return html`
-    "${description}": {
-      "prefix": "${tabtrigger}",
-      "body": [
-        ${newSnippet.join('\n')}
-      ],
-      "description": "${description}"
+    {
+      "${description}": {
+        "prefix": "${tabtrigger}",
+        "body": [
+          ${newSnippet.join('\n')}
+        ],
+        "description": "${description}"
+        }
     }
   `;
 };
