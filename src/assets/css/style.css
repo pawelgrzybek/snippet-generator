@@ -44,7 +44,6 @@ body {
 
 @media screen and (min-width: 960px) {
   .app {
-    height: 100vh;
     padding: 32px;
   }
 }
