@@ -7,7 +7,7 @@ const Info = () => (
       const docs = {
         vscode: "https://code.visualstudio.com/docs/editor/userdefinedsnippets",
         sublimetext:
-          "http://docs.sublimetext.info/en/latest/extensibility/snippets.html",
+          "https://docs.sublimetext.io/guide/extensibility/snippets.html",
         atom: "http://flight-manual.atom.io/using-atom/sections/snippets/"
       };
 
