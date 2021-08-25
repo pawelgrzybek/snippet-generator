@@ -4,9 +4,11 @@ import { Consumer } from "./Context";
 
 const renderSnippet = (snippet, tabtrigger, description) => {
   // escape " with \"
+  // escape tabs with \t"
   // split lines by line-break
   const separatedSnippet = snippet
     .replace(/\\/g, "\\\\")
+    .replace(/\t/g, "\\t")
     .replace(/"/g, '\\"')
     .split("\n");
   const separatedSnippetLength = separatedSnippet.length;
