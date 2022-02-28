@@ -11,10 +11,10 @@ const renderSnippet = (snippet, tabtrigger, description) => {
     .split("\n");
   tabtrigger = tabtrigger
     .replace(/\\/g, "\\\\")
-    .replace(/"/g, '\\"')
+    .replace(/"/g, '\\"');
   description = description
     .replace(/\\/g, "\\\\")
-    .replace(/"/g, '\\"')
+    .replace(/"/g, '\\"');
   const separatedSnippetLength = separatedSnippet.length;
 
   // add double quotes around each line apart from the last one

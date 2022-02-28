@@ -6,15 +6,15 @@ const renderSnippet = (snippet, tabtrigger, description) => {
   // escape " and ' with \" and \'
   snippet = snippet
     .replace(/\\/g, "\\\\")
-    .replace(/"/g, '\\"')
+    .replace(/"/g, '\\"');
   tabtrigger = tabtrigger
     .replace(/\\/g, "\\\\")
     .replace(/"/g, '\\"')
-    .replace(/'/g, "\\'")
+    .replace(/'/g, "\\'");
   description = description
     .replace(/\\/g, "\\\\")
     .replace(/"/g, '\\"')
-    .replace(/'/g, "\\'")
+    .replace(/'/g, "\\'");
 
   // prettier-ignore
   return html`
