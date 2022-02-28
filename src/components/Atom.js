@@ -3,6 +3,17 @@ import { html } from "common-tags";
 import { Consumer } from "./Context";
 
 const renderSnippet = (snippet, tabtrigger, description) => {
+  // escape " with \"
+  snippet = snippet
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+  tabtrigger = tabtrigger
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+  description = description
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+
   // prettier-ignore
   return html`
     '${description}':
