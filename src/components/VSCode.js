@@ -8,6 +8,8 @@ const renderSnippet = (snippet, tabtrigger, description) => {
   const separatedSnippet = snippet
     .replace(/\\/g, "\\\\")
     .replace(/"/g, '\\"')
+    .replace(/\$\{(\w+)\}/g, "\\\\$${$1\\\\}")
+    .replace(/\$(\w+)/g, "\\\\$$$1")
     .split("\n");
   const separatedSnippetLength = separatedSnippet.length;
 
