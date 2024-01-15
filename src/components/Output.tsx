@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import VSCode from "./VSCode";
 import SublimeText from "./SublimeText";
 import Atom from "./Atom";
 import Clipboard from "clipboard";
-import { Consumer } from "./Context";
+import { Consumer, Mode } from "./Context";
 
 class Output extends Component {
-  renderSnippet(mode) {
+  renderSnippet(mode: Mode) {
     if (mode === "vscode") {
       return <VSCode />;
     } else if (mode === "sublimetext") {
@@ -24,43 +24,43 @@ class Output extends Component {
   render() {
     return (
       <Consumer>
-        {context => (
+        {(context) => (
           <div className="app__half">
             <div className="app__halftop">
               <button
                 className={
-                  context.state.mode === "vscode"
+                  context!.state.mode === "vscode"
                     ? "app__button app__button--vscode app__button--active"
                     : "app__button app__button--vscode"
                 }
-                onClick={() => context.updateMode("vscode")}
+                onClick={() => context!.updateMode("vscode")}
               >
                 VSCode
               </button>
               <button
                 className={
-                  context.state.mode === "sublimetext"
+                  context!.state.mode === "sublimetext"
                     ? "app__button app__button--sublimetext app__button--active"
                     : "app__button app__button--sublimetext"
                 }
-                onClick={() => context.updateMode("sublimetext")}
+                onClick={() => context!.updateMode("sublimetext")}
               >
                 Sublime Text
               </button>
               <button
                 className={
-                  context.state.mode === "atom"
+                  context!.state.mode === "atom"
                     ? "app__button app__button--atom app__button--active"
                     : "app__button app__button--atom"
                 }
-                onClick={() => context.updateMode("atom")}
+                onClick={() => context!.updateMode("atom")}
               >
                 Atom
               </button>
             </div>
 
             <div className="app__halfbottom">
-              {this.renderSnippet(context.state.mode)}
+              {this.renderSnippet(context!.state.mode)}
 
               <div className="app__buttons">
                 <button

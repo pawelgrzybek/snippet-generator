@@ -1,8 +1,11 @@
-import React from "react";
 import { html } from "common-tags";
 import { Consumer } from "./Context";
 
-const renderSnippet = (snippet, tabtrigger, description) => {
+const renderSnippet = (
+  snippet: string,
+  tabtrigger: string,
+  description: string,
+) => {
   const regexpMagic = /(\$)([a-z(]+)([^$])/gi;
   const escapedSnippet = snippet.replace(regexpMagic, "\\$1$2$3");
   // prettier-ignore
@@ -21,12 +24,12 @@ const renderSnippet = (snippet, tabtrigger, description) => {
 
 const SublimeText = () => (
   <Consumer>
-    {context => (
+    {(context) => (
       <pre className="app__pre">
         {renderSnippet(
-          context.state.snippet,
-          context.state.tabTrigger,
-          context.state.description
+          context!.state.snippet,
+          context!.state.tabTrigger,
+          context!.state.description,
         )}
       </pre>
     )}

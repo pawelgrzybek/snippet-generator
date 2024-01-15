@@ -1,5 +1,3 @@
-import React from "react";
-
 const Header = () => (
   <div className="app__header">
     <h1 className="app__title">snippet generator</h1>

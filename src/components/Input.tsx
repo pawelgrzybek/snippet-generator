@@ -1,10 +1,9 @@
-import React from "react";
 import { Consumer } from "./Context";
 import Info from "./Info";
 
 const Input = () => (
   <Consumer>
-    {context => {
+    {(context) => {
       return (
         <div className="app__half">
           <div className="app__halftop">
@@ -13,8 +12,8 @@ const Input = () => (
               className="app__input"
               name="description"
               placeholder="Description…"
-              defaultValue={context.state.description}
-              onInput={context.onInput}
+              defaultValue={context?.state.description}
+              onInput={context?.onChangeHandler<HTMLInputElement>}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
@@ -25,8 +24,8 @@ const Input = () => (
               className="app__input"
               name="tabTrigger"
               placeholder="Tab trigger…"
-              defaultValue={context.state.tabTrigger}
-              onInput={context.onInput}
+              defaultValue={context?.state.tabTrigger}
+              onInput={context?.onChangeHandler<HTMLInputElement>}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
@@ -35,12 +34,12 @@ const Input = () => (
           </div>
           <div className="app__halfbottom">
             <textarea
-              ref={context.textareaRef}
+              ref={context?.textareaRef}
               className="app__textarea"
               name="snippet"
               placeholder="Your snippet…"
-              defaultValue={context.state.snippet}
-              onChange={context.onInput}
+              defaultValue={context?.state.snippet}
+              onInput={context?.onChangeHandler<HTMLTextAreaElement>}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"

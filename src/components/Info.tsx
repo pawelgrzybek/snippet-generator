@@ -1,14 +1,13 @@
-import React from "react";
 import { Consumer } from "./Context";
 
 const Info = () => (
   <Consumer>
-    {context => {
+    {(context) => {
       const docs = {
         vscode: "https://code.visualstudio.com/docs/editor/userdefinedsnippets",
         sublimetext:
           "https://docs.sublimetext.io/guide/extensibility/snippets.html",
-        atom: "http://flight-manual.atom.io/using-atom/sections/snippets/"
+        atom: "http://flight-manual.atom.io/using-atom/sections/snippets/",
       };
 
       const platformKey = navigator.platform === "MacIntel" ? "⌘" : "ctrl";
@@ -20,7 +19,7 @@ const Info = () => (
           <span className="app__infoselect">{"${1:example}"}</span> |{" "}
           <a
             className="app__infolink"
-            href={docs[context.state.mode]}
+            href={docs[context!.state.mode]}
             target="_blank"
             rel="noopener noreferrer"
           >

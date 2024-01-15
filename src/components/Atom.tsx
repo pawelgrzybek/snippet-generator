@@ -1,8 +1,11 @@
-import React from "react";
 import { html } from "common-tags";
 import { Consumer } from "./Context";
 
-const renderSnippet = (snippet, tabtrigger, description) => {
+const renderSnippet = (
+  snippet: string,
+  tabtrigger: string,
+  description: string,
+) => {
   // prettier-ignore
   return html`
     '${description}':
@@ -15,12 +18,12 @@ const renderSnippet = (snippet, tabtrigger, description) => {
 
 const Atom = () => (
   <Consumer>
-    {context => (
+    {(context) => (
       <pre className="app__pre">
         {renderSnippet(
-          context.state.snippet,
-          context.state.tabTrigger,
-          context.state.description
+          context!.state.snippet,
+          context!.state.tabTrigger,
+          context!.state.description,
         )}
       </pre>
     )}

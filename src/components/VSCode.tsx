@@ -1,8 +1,11 @@
-import React from "react";
 import { html } from "common-tags";
 import { Consumer } from "./Context";
 
-const renderSnippet = (snippet, tabtrigger, description) => {
+const renderSnippet = (
+  snippet: string,
+  tabtrigger: string,
+  description: string,
+) => {
   // escape " with \"
   // split lines by line-break
   const separatedSnippet = snippet
@@ -29,12 +32,12 @@ const renderSnippet = (snippet, tabtrigger, description) => {
 
 const VSCode = () => (
   <Consumer>
-    {context => (
+    {(context) => (
       <pre className="app__pre">
         {renderSnippet(
-          context.state.snippet,
-          context.state.tabTrigger,
-          context.state.description
+          context!.state.snippet,
+          context!.state.tabTrigger,
+          context!.state.description,
         )}
       </pre>
     )}
