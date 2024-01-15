@@ -148,7 +148,6 @@ class Provider extends Component<ProviderProps> {
   // react lifecycle methods
   componentDidMount() {
     window.addEventListener("keydown", (e) => {
-      console.log({ e });
       // tab key (when snippet input is active)
       if (
         e.key === "Tab" &&
