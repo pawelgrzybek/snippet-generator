@@ -1,6 +1,6 @@
 const Header = () => (
   <div className="app__header">
-    <h1 className="app__title">snippet generator</h1>
+    <h1 className="app__title">snippet-generator</h1>
     <p className="app__subtitle">
       Made by{" "}
       <a className="app__link" href="https://pawelgrzybek.com">
