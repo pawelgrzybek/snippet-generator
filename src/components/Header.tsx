@@ -6,20 +6,17 @@ const Header = () => (
       <a className="app__link" href="https://pawelgrzybek.com">
         Pawel Grzybek
       </a>{" "}
+      |{" "}
+      <a className="app__link" href="https://www.buymeacoffee.com/pawelgrzybek">
+        Buy me a coffee
+      </a>{" "}
       | Source code on{" "}
       <a
         className="app__link"
         href="https://github.com/pawelgrzybek/snippet-generator"
       >
         GitHub
-      </a>{" "}
-      |{" "}
-      <a
-        className="app__link"
-        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsnippet-generator.app%2F&text=Snippet%20generator%20for%20VS%20Code%2C%20Sublime%20Text%20and%20Atom&amp;via=pawelgrzybek"
-      >
-        Share on Twitter
-      </a>{" "}
+      </a>
     </p>
   </div>
 );

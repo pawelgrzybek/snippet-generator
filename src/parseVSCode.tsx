@@ -1,10 +1,9 @@
 import { html } from "common-tags";
-import { Consumer } from "./Context";
 
-const renderSnippet = (
-  snippet: string,
-  tabtrigger: string,
+const parseVSCode = (
   description: string,
+  tabtrigger: string,
+  snippet: string,
 ) => {
   // escape " with \"
   // split lines by line-break
@@ -30,18 +29,4 @@ const renderSnippet = (
   `;
 };
 
-const VSCode = () => (
-  <Consumer>
-    {(context) => (
-      <pre className="app__pre">
-        {renderSnippet(
-          context!.state.snippet,
-          context!.state.tabTrigger,
-          context!.state.description,
-        )}
-      </pre>
-    )}
-  </Consumer>
-);
-
-export default VSCode;
+export default parseVSCode;

@@ -7,14 +7,13 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* stylelint-disable */
   font-smoothing: antialiased;
-  /* stylelint-enable */
   text-size-adjust: 100%;
 }
 
 body {
-  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
   font-size: 16px;
   line-height: 32px;
 }
@@ -101,8 +100,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 2px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, .75);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.75);
   overflow: hidden;
 }
 
@@ -126,11 +125,11 @@ body {
   padding: 0 16px;
   transition: box-shadow 140ms;
   border: 0;
-  border-radius: 2px;
+  border-radius: 3px;
   outline: none;
   background-color: #fff;
   font: inherit;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 
 .app--vscode .app__input:focus {
@@ -160,11 +159,11 @@ body {
   padding: 16px;
   transition: box-shadow 140ms;
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   outline: none;
   background-color: #fff;
   font: inherit;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
   resize: none;
 }
 
@@ -225,9 +224,9 @@ body {
   padding: 0 16px;
   transition: background-color 140ms;
   border: 0;
-  border-radius: 2px;
+  border-radius: 3px;
   outline: 0;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: rgba(0, 0, 0, 0.25);
   color: #fff;
   font: inherit;
   white-space: nowrap;
@@ -250,10 +249,10 @@ body {
   flex: 1;
   padding: 16px;
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: #fff;
   font: inherit;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
   overflow: auto;
   resize: none;
   /* stylelint-disable */
@@ -267,7 +266,7 @@ body {
 .app__btn {
   padding: 0 16px;
   border: 0;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fff;
   font: inherit;
   line-height: 56px;

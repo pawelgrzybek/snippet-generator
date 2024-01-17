@@ -1,34 +1,32 @@
-import { Consumer } from "./Context";
+import { useContext } from "react";
+import { Context } from "./Context";
 
-const Info = () => (
-  <Consumer>
-    {(context) => {
-      const docs = {
-        vscode: "https://code.visualstudio.com/docs/editor/userdefinedsnippets",
-        sublimetext:
-          "https://docs.sublimetext.io/guide/extensibility/snippets.html",
-        atom: "http://flight-manual.atom.io/using-atom/sections/snippets/",
-      };
+const Info = () => {
+  const context = useContext(Context);
 
-      const platformKey = navigator.platform === "MacIntel" ? "⌘" : "ctrl";
+  const docs = {
+    vscode: "https://code.visualstudio.com/docs/editor/userdefinedsnippets",
+    sublimetext:
+      "https://docs.sublimetext.io/guide/extensibility/snippets.html",
+    atom: "http://flight-manual.atom.io/using-atom/sections/snippets/",
+  };
 
-      // eslint-disable-next-line no-template-curly-in-string
-      return (
-        <p className="app__info">
-          To declare a placeholder ({platformKey} + i):{" "}
-          <span className="app__infoselect">{"${1:example}"}</span> |{" "}
-          <a
-            className="app__infolink"
-            href={docs[context!.state.mode]}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            More info
-          </a>
-        </p>
-      );
-    }}
-  </Consumer>
-);
+  const platformKey = navigator.platform === "MacIntel" ? "⌘" : "ctrl";
+
+  return (
+    <p className="app__info">
+      To declare a placeholder ({platformKey} + i):{" "}
+      <span className="app__infoselect">{"${1:example}"}</span> |{" "}
+      <a
+        className="app__infolink"
+        href={docs[context.mode]}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        More info
+      </a>
+    </p>
+  );
+};
 
 export default Info;

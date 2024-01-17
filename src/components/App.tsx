@@ -1,20 +1,21 @@
 import Header from "./Header";
 import Input from "./Input";
 import Output from "./Output";
-import { Consumer } from "./Context";
+import { Context } from "./Context";
+import { useContext } from "react";
 
-const App = () => (
-  <Consumer>
-    {(context) => (
-      <div className={`app app--${context!.state.mode}`}>
-        <Header />
-        <div className="app__main">
-          <Input />
-          <Output />
-        </div>
+const App = () => {
+  const context = useContext(Context);
+
+  return (
+    <div className={`app app--${context.mode}`}>
+      <Header />
+      <div className="app__main">
+        <Input />
+        <Output />
       </div>
-    )}
-  </Consumer>
-);
+    </div>
+  );
+};
 
 export default App;

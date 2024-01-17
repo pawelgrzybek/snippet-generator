@@ -1,10 +1,9 @@
 import { html } from "common-tags";
-import { Consumer } from "./Context";
 
-const renderSnippet = (
-  snippet: string,
-  tabtrigger: string,
+const renderSublimeText = (
   description: string,
+  tabtrigger: string,
+  snippet: string,
 ) => {
   const regexpMagic = /(\$)([a-z(]+)([^$])/gi;
   const escapedSnippet = snippet.replace(regexpMagic, "\\$1$2$3");
@@ -22,18 +21,4 @@ const renderSnippet = (
   `;
 };
 
-const SublimeText = () => (
-  <Consumer>
-    {(context) => (
-      <pre className="app__pre">
-        {renderSnippet(
-          context!.state.snippet,
-          context!.state.tabTrigger,
-          context!.state.description,
-        )}
-      </pre>
-    )}
-  </Consumer>
-);
-
-export default SublimeText;
+export default renderSublimeText;
