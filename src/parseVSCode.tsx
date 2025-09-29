@@ -10,6 +10,7 @@ const parseVSCode = (
   const separatedSnippet = snippet
     .replace(/\\/g, "\\\\")
     .replace(/"/g, '\\"')
+    .replace(/\$/g, '\\\\$')
     .split("\n");
   const separatedSnippetLength = separatedSnippet.length;
 
