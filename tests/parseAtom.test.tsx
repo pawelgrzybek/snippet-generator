@@ -5,7 +5,7 @@ describe("parseAtom", () => {
   const description = "a";
   const tabTrigger = "b";
   const snippet = "c";
-
+  const snippet 2 = "d":
   test("parseAtom", () => {
     const result = `'a':
   'prefix': 'b'
