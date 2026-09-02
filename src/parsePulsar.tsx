@@ -1,6 +1,6 @@
 import { html } from "common-tags";
 
-const parseAtom = (
+const parsePulsar = (
   description: string,
   tabtrigger: string,
   snippet: string,
@@ -15,4 +15,4 @@ const parseAtom = (
   `;
 };
 
-export default parseAtom;
+export default parsePulsar;

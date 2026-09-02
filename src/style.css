@@ -41,8 +41,8 @@ body {
   background-color: #4b4b4b;
 }
 
-.app--atom {
-  background-color: #367d5b;
+.app--pulsar {
+  background-color: #5d3f8e;
 }
 
 .app--zed {
@@ -143,8 +143,8 @@ body {
   box-shadow: inset 0 0 0 2px #4b4b4b;
 }
 
-.app--atom .app__input:focus {
-  box-shadow: inset 0 0 0 2px #367d5b;
+.app--pulsar .app__input:focus {
+  box-shadow: inset 0 0 0 2px #5d3f8e;
 }
 
 .app--zed .app__input:focus {
@@ -181,8 +181,8 @@ body {
   box-shadow: inset 0 0 0 2px #4b4b4b;
 }
 
-.app--atom .app__textarea:focus {
-  box-shadow: inset 0 0 0 2px #367d5b;
+.app--pulsar .app__textarea:focus {
+  box-shadow: inset 0 0 0 2px #5d3f8e;
 }
 
 .app--zed .app__textarea:focus {
@@ -219,8 +219,8 @@ body {
   color: #4b4b4b;
 }
 
-.app--atom .app__infolink {
-  color: #367d5b;
+.app--pulsar .app__infolink {
+  color: #5d3f8e;
 }
 
 .app--zed .app__infolink {
@@ -251,8 +251,8 @@ body {
   background-color: #4b4b4b;
 }
 
-.app__button--atom.app__button--active {
-  background-color: #367d5b;
+.app__button--pulsar.app__button--active {
+  background-color: #5d3f8e;
 }
 
 .app__button--zed.app__button--active {
@@ -296,8 +296,8 @@ body {
   background-color: #4b4b4b;
 }
 
-.app--atom .app__btn {
-  background-color: #367d5b;
+.app--pulsar .app__btn {
+  background-color: #5d3f8e;
 }
 
 .app--zed .app__btn {

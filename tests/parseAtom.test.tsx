@@ -1,17 +1,17 @@
-import parseAtom from "../src/parseAtom";
+import parsePulsar from "../src/parsePulsar";
 import { describe, expect, test } from "vitest";
 
-describe("parseAtom", () => {
+describe("parsePulsar", () => {
   const description = "a";
   const tabTrigger = "b";
   const snippet = "c";
 
-  test("parseAtom", () => {
+  test("parsePulsar", () => {
     const result = `'a':
   'prefix': 'b'
   'body': """
     c
   """`;
-    expect(parseAtom(description, tabTrigger, snippet)).toBe(result);
+    expect(parsePulsar(description, tabTrigger, snippet)).toBe(result);
   });
 });

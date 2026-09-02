@@ -2,7 +2,7 @@ import { Context, Mode } from "./Context";
 import { useContext, useEffect, useState } from "react";
 import parseVSCode from "../parseVSCode";
 import parseSublimeText from "../parseSublimeText";
-import parseAtom from "../parseAtom";
+import parsePulsar from "../parsePulsar";
 import parseZed from "../parseZed";
 
 const parseSnippet = (
@@ -19,8 +19,8 @@ const parseSnippet = (
     return parseSublimeText(snippet, tabTrigger, description);
   }
 
-  if (mode === "atom") {
-    return parseAtom(snippet, tabTrigger, description);
+  if (mode === "pulsar") {
+    return parsePulsar(snippet, tabTrigger, description);
   }
 
   if (mode === "zed") {
@@ -88,13 +88,13 @@ const Output = () => {
         </button>
         <button
           className={
-            context.mode === "atom"
-              ? "app__button app__button--atom app__button--active"
-              : "app__button app__button--atom"
+            context.mode === "pulsar"
+              ? "app__button app__button--pulsar app__button--active"
+              : "app__button app__button--pulsar"
           }
-          onClick={() => context.setMode("atom")}
+          onClick={() => context.setMode("pulsar")}
         >
-          Atom
+          Pulsar
         </button>
       </div>
 

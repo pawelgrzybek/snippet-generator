@@ -8,7 +8,7 @@ const Info = () => {
     vscode: "https://code.visualstudio.com/docs/editor/userdefinedsnippets",
     sublimetext:
       "https://docs.sublimetext.io/guide/extensibility/snippets.html",
-    atom: "http://flight-manual.atom.io/using-atom/sections/snippets/",
+    pulsar: "https://docs.pulsar-edit.dev/core-packages-and-features/snippets/",
     zed: "https://zed.dev/docs/snippets",
   };
 

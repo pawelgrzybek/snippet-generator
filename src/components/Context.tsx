@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 
-export type Mode = "vscode" | "sublimetext" | "atom" | "zed";
+export type Mode = "vscode" | "sublimetext" | "pulsar" | "zed";
 
 interface MyContext {
   description: string;
